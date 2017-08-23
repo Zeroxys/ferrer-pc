@@ -6725,6 +6725,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Items = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+//import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
+//component's
+
+
 var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
@@ -6737,28 +6743,38 @@ var _fancybox = __webpack_require__(90);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const styles = {
+  border: 'blue'
+};
+
 class Items extends _react2.default.Component {
   constructor(props) {
     super();
-    this.state = {
-      showFancy: true
-    };
 
     this.data = props.product;
     this.showFancy = this.showFancy.bind(this);
+    this.hideFancy = this.hideFancy.bind(this);
+  }
+
+  hideFancy() {
+    console.log('hola');
   }
 
   showFancy() {
     if (this.state.showFancy) {
-      return _react2.default.createElement(_fancybox.FancyBox, null);
+      return _react2.default.createElement(
+        'div',
+        { onClick: this.hideFancy, style: _extends({}, styles) },
+        _react2.default.createElement(_fancybox.FancyBox, { data: this.data })
+      );
     }
   }
 
   render() {
     return _react2.default.createElement(
       'div',
-      { className: 'itemBox', onClick: this.showFancy },
-      _react2.default.createElement(_fancybox.FancyBox, null),
+      { className: 'itemBox' },
+      this.showFancy(),
       _react2.default.createElement(
         'span',
         { className: 'itemBox-discount' },
@@ -6803,8 +6819,6 @@ class Items extends _react2.default.Component {
   }
 }
 exports.Items = Items;
-
-//component's
 
 /***/ }),
 /* 55 */
@@ -10545,55 +10559,73 @@ var _utils = __webpack_require__(34);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const FancyBox = exports.FancyBox = props => {
+class FancyBox extends _react2.default.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      showCss: props.showCss,
+      close: false
+    };
 
-  let data = props.data || _utils.utils.items();
+    this.data = props.data || _utils.utils.items();
 
-  return _react2.default.createElement(
-    'div',
-    { id: 'fancybox', className: 'fadeIn animated' },
-    _react2.default.createElement(
+    this.close = this.close.bind(this);
+  }
+
+  close() {
+    this.setState({
+      close: !this.state.close
+    });
+  }
+
+  render() {
+    return _react2.default.createElement(
       'div',
-      { className: 'fancybox-wrap' },
-      _react2.default.createElement('a', { href: '#', className: 'fancybox-close' }),
+      { id: 'fancybox', className: "fadeIn animated  " + this.state.showCss },
       _react2.default.createElement(
         'div',
-        { className: 'form-box' },
+        { className: 'fancybox-wrap' },
+        _react2.default.createElement('a', { href: '#', className: 'fancybox-close', onClick: this.close }),
         _react2.default.createElement(
           'div',
-          { className: 'form-image' },
-          _react2.default.createElement('img', { src: data.img })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'form-group' },
+          { className: 'form-box' },
           _react2.default.createElement(
-            'h3',
-            { className: 'form-group--title' },
-            data.name
+            'div',
+            { className: 'form-image' },
+            _react2.default.createElement('img', { src: this.data.img })
           ),
           _react2.default.createElement(
-            'h4',
-            { className: 'form-group--price' },
-            '$ ',
-            data.price
-          ),
-          _react2.default.createElement(
-            'ul',
-            null,
-            data.skills.map((el, i) => {
-              return _react2.default.createElement(
-                'li',
-                { className: 'form-group--list', key: i },
-                el
-              );
-            })
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'form-group--title' },
+              this.data.name
+            ),
+            _react2.default.createElement(
+              'h4',
+              { className: 'form-group--price' },
+              '$ ',
+              this.data.price
+            ),
+            _react2.default.createElement(
+              'ul',
+              null,
+              this.data.skills.map((el, i) => {
+                return _react2.default.createElement(
+                  'li',
+                  { className: 'form-group--list', key: i },
+                  el
+                );
+              })
+            )
           )
         )
       )
-    )
-  );
-};
+    );
+  }
+}
+exports.FancyBox = FancyBox;
 
 // util's
 
@@ -25460,7 +25492,7 @@ class Category extends _react2.default.Component {
       _react2.default.createElement(
         'div',
         { className: 'MainContent-category-resultBox' },
-        _utils.utils.getItems(4).map((el, i) => {
+        _utils.utils.getItems(7).map((el, i) => {
           return _react2.default.createElement(_items.Items, { product: el, key: i });
         })
       )

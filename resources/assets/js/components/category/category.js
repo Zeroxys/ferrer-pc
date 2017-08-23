@@ -9,7 +9,6 @@ import {Spinner} from '../spinner/spinner'
 import {Items} from './items'
 import {FancyBox} from '../fancybox/fancybox'
 
-
 export class Category extends React.Component {
   constructor () {
     super ()
@@ -36,9 +35,9 @@ export class Category extends React.Component {
     }
 
     return (<div>
-      {this.state.categorias.map( (el, i) => {
-        return (<Categories data={el} key={i}/>)
-      })}
+        {this.state.categorias.map( (el, i) => {
+          return (<Categories data={el} key={i}/>)
+        })}
     </div>)
   }
 
@@ -49,13 +48,11 @@ export class Category extends React.Component {
           <h2 className="MainContent-category-categoryTitle">Categorias</h2>
           {this.showCategories()}
         </div>
-
         <div className="MainContent-category-resultBox">
-          {utils.getItems(4).map( (el, i) => {
+          {utils.getItems(7).map( (el, i) => {
             return (<Items product={el} key={i}/>)
           })}
         </div>
-
       </section>
     )
   }

@@ -1,30 +1,40 @@
 import React from 'react'
 import HDD from '../../../img/discoduro.png'
+//import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 //component's
 import {FancyBox} from '../fancybox/fancybox'
 
+const styles = {
+  border : 'blue'
+}
+
 export class Items extends React.Component{
   constructor (props) {
     super()
-    this.state = {
-      showFancy : true
-    }
 
     this.data = props.product
     this.showFancy = this.showFancy.bind(this)
+    this.hideFancy = this.hideFancy.bind(this)
+  }
+
+  hideFancy() {
+    console.log('hola')
   }
 
   showFancy() {
     if(this.state.showFancy) {
-      return (<FancyBox/>)
+      return (
+      <div onClick={this.hideFancy} style={{...styles}}>
+        <FancyBox data = {this.data}/>
+      </div>)
     }
   }
 
   render () {
     return (
-      <div className="itemBox" onClick={this.showFancy}>
-        <FancyBox/>
+      <div className="itemBox">
+        {this.showFancy()}
         <span className="itemBox-discount">
           <div className="itemBox-discount-contentDiscount">
             <p className="itemBox-discount-contentDiscount-percent">{this.data.discount}</p>

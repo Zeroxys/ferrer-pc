@@ -3,7 +3,6 @@ import React from 'react'
 import {Items} from './items'
 import {utils} from '../../utils/utils'
 
-
 export class Subcategories extends React.Component {
   constructor (props) {
     super()

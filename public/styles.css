@@ -3151,17 +3151,21 @@
     transform: scale(1);
   }
 }
+.hideBox {
+  display: block;
+}
 #fancybox {
   background: url("http://fancyapps.com/fancybox/source/fancybox_overlay.png") repeat;
   opacity: 0.2;
+  display: none;
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: 8010;
   width: 100%;
   height: 100%;
+  z-index: 8096;
 }
 .fancybox-wrap {
   width: 869px;
@@ -3214,14 +3218,46 @@
   color: #585858;
 }
 .animated {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
 .fadeIn {
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms ease-out;
+  transition: opacity 1000ms ease-out;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-active {
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-out;
+  transition: opacity 500ms ease-out;
 }
 body html {
   margin: 0;
