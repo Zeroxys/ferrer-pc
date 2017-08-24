@@ -6744,28 +6744,40 @@ var _fancybox = __webpack_require__(90);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const styles = {
-  border: 'blue'
+  border: 'blue',
+  display: 'block'
 };
 
 class Items extends _react2.default.Component {
   constructor(props) {
     super();
 
-    this.data = props.product;
-    this.showFancy = this.showFancy.bind(this);
-    this.hideFancy = this.hideFancy.bind(this);
-  }
+    this.state = {
+      showFancy: false
+    };
 
-  hideFancy() {
-    console.log('hola');
+    this.styles = {
+      border: 'blue',
+      display: 'block'
+    };
+
+    this.data = props.product;
+    this.getFancy = this.getFancy.bind(this);
+    this.showFancy = this.showFancy.bind(this);
   }
 
   showFancy() {
+    this.setState({
+      showFancy: !this.state.showFancy
+    });
+  }
+
+  getFancy() {
     if (this.state.showFancy) {
       return _react2.default.createElement(
         'div',
-        { onClick: this.hideFancy, style: _extends({}, styles) },
-        _react2.default.createElement(_fancybox.FancyBox, { data: this.data })
+        { style: _extends({}, styles) },
+        _react2.default.createElement(_fancybox.FancyBox, { data: this.data, css: this.styles })
       );
     }
   }
@@ -6773,8 +6785,8 @@ class Items extends _react2.default.Component {
   render() {
     return _react2.default.createElement(
       'div',
-      { className: 'itemBox' },
-      this.showFancy(),
+      { className: 'itemBox', onClick: this.showFancy },
+      this.state.showFancy ? this.getFancy() : null,
       _react2.default.createElement(
         'span',
         { className: 'itemBox-discount' },
@@ -10551,6 +10563,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.FancyBox = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+// util's
+
+
 var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
@@ -10561,12 +10578,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 class FancyBox extends _react2.default.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
-      showCss: props.showCss,
+      showCss: props.css,
       close: false
     };
-
     this.data = props.data || _utils.utils.items();
 
     this.close = this.close.bind(this);
@@ -10579,9 +10595,10 @@ class FancyBox extends _react2.default.Component {
   }
 
   render() {
+    console.log(this.state.showCss);
     return _react2.default.createElement(
       'div',
-      { id: 'fancybox', className: "fadeIn animated  " + this.state.showCss },
+      { id: 'fancybox', className: "fadeIn animated  ", style: _extends({}, this.props.css) },
       _react2.default.createElement(
         'div',
         { className: 'fancybox-wrap' },
@@ -10626,8 +10643,6 @@ class FancyBox extends _react2.default.Component {
   }
 }
 exports.FancyBox = FancyBox;
-
-// util's
 
 /***/ }),
 /* 91 */

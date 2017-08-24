@@ -6,35 +6,47 @@ import HDD from '../../../img/discoduro.png'
 import {FancyBox} from '../fancybox/fancybox'
 
 const styles = {
-  border : 'blue'
+  border : 'blue',
+  display: 'block'
 }
 
 export class Items extends React.Component{
   constructor (props) {
     super()
 
-    this.data = props.product
-    this.showFancy = this.showFancy.bind(this)
-    this.hideFancy = this.hideFancy.bind(this)
-  }
+    this.state = {
+      showFancy :  false
+    }
 
-  hideFancy() {
-    console.log('hola')
+    this.styles = {
+      border: 'blue',
+      display: 'block'
+    }
+
+    this.data = props.product
+    this.getFancy = this.getFancy.bind(this)
+    this.showFancy = this.showFancy.bind(this)
   }
 
   showFancy() {
+    this.setState({
+      showFancy : !this.state.showFancy
+    })
+  }
+
+  getFancy() {
     if(this.state.showFancy) {
       return (
-      <div onClick={this.hideFancy} style={{...styles}}>
-        <FancyBox data = {this.data}/>
+      <div style={{...styles}}>
+        <FancyBox data = {this.data} css={this.styles}/>
       </div>)
     }
   }
 
   render () {
     return (
-      <div className="itemBox">
-        {this.showFancy()}
+      <div className="itemBox" onClick={this.showFancy}>
+        {this.state.showFancy ? this.getFancy() : null}
         <span className="itemBox-discount">
           <div className="itemBox-discount-contentDiscount">
             <p className="itemBox-discount-contentDiscount-percent">{this.data.discount}</p>

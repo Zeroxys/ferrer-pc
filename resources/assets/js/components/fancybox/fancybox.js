@@ -5,12 +5,11 @@ import {utils} from '../../utils/utils'
 
 export class FancyBox extends React.Component {
   constructor(props) {
-    super()
+    super(props)
     this.state = {
-      showCss : props.showCss,
+      showCss : props.css,
       close : false
     }
-
     this.data = props.data || utils.items()
 
     this.close = this.close.bind(this)
@@ -22,9 +21,10 @@ export class FancyBox extends React.Component {
     })
   }
 
-  render () { 
+  render () {
+    console.log(this.state.showCss)
     return (
-      <div id="fancybox" className={"fadeIn animated  " + (this.state.showCss)}>
+      <div id="fancybox" className={"fadeIn animated  "} style={{...this.props.css}}>
         <div className="fancybox-wrap">
           <a href="#" className="fancybox-close" onClick={this.close}></a>
           <div className="form-box">
