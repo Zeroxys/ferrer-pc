@@ -1,5 +1,7 @@
 @import "../../../node_modules/font-awesome/css/font-awesome.css"
 @import "../../../node_modules/react-image-gallery/styles/css/image-gallery.css"
+@import "../../../node_modules/slick-carousel/slick/slick.css"
+@import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
 $ferrerColor = #710D0D;
 $backgroundColor = #f1f1f1;
@@ -11,8 +13,8 @@ $backgroundColor = #f1f1f1;
 @import "./footer/footer.styl"
 @import "./spinner/spinner.styl"
 @import "./fancybox/fancybox.styl"
+@import "./gallery/gallery.styl"
 @import "./transition/transition.styl"
-
 body html 
   margin:0
   padding:0
