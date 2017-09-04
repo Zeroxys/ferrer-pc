@@ -26151,7 +26151,8 @@ class Category extends _react2.default.Component {
         _utils.utils.getItems(7).map((el, i) => {
           return _react2.default.createElement(_items.Items, { product: el, key: i });
         })
-      )
+      ),
+      'mini galeria xD'
     );
   }
 
@@ -26447,6 +26448,15 @@ class ItemsGallery extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       { className: 'galleryItems' },
+      _react2.default.createElement(
+        'span',
+        { className: 'galleryTitle' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          'PRODUCTOS RECOMENDADOS'
+        )
+      ),
       _react2.default.createElement(_arrows.Slide, null)
     );
   }
