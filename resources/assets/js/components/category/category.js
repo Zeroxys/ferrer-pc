@@ -44,6 +44,7 @@ export class Category extends React.Component {
   render () {
     return (
       <section className="MainContent-category">
+        
         <div className="MainContent-category-categoryMenu">
           <div className="MainContent-category-categoryMenu">
             <h2 className="MainContent-category-categoryTitle">Categorias</h2>
