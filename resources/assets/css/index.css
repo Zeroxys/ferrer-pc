@@ -15,6 +15,24 @@ $backgroundColor = #f1f1f1;
 @import "./fancybox/fancybox.styl"
 @import "./gallery/gallery.styl"
 @import "./transition/transition.styl"
+
+@font-face 
+  font-family: SFBold
+  src: url('../fonts/SanFranciscoText-Bold.otf')
+
+@font-face 
+  font-family: SFNSDisplay
+  src: url('../fonts/SFNSTextSemibold.otf')
+
+@font-face 
+  font-family: SFNSDisplayRegular
+  src: url('../fonts/SFText-Regular.otf')
+
+  @font-face 
+  font-family: SanFranciscoTextRegular
+  src: url('../fonts/SanFranciscoText-Regular.otf')    
+
+
 body html 
   margin:0
   padding:0

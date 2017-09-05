@@ -1,16 +1,16 @@
 .MainContent
+  border:2px solid black
   display: flex
-  justify-content: center
+  justify-content: space-around
   align-items: center
-  flex-direction: row
+  min-height: 1100px
 
   &-category
-    flex: 0 0 1100px
+    border:1px solid yellow
     display:flex
-    justify-content: space-between
+    justify-content: space-around
     align-items: flex-start
     flex-direction: row
-    margin-top:50px
 
     &-categoryMenu
       flex: 0 0 266px
@@ -25,7 +25,18 @@
       font-size: 11px
       margin-left: 20px
 
+    &-resultContent
+      border:1px solid green
+      display:flex
+      justify-content: flex-start
+      align-items: flex-start
+      flex-direction: column
+
+    &-resultTitle
+      font-family: 'SanFranciscoTextRegular'
+
     &-resultBox
+      border:1px solid red
       flex: 0 0 857px
       height: 828px
       margin-left:20px

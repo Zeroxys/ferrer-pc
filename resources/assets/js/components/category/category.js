@@ -45,14 +45,27 @@ export class Category extends React.Component {
     return (
       <section className="MainContent-category">
         <div className="MainContent-category-categoryMenu">
-          <h2 className="MainContent-category-categoryTitle">Categorias</h2>
-          {this.showCategories()}
+          <div className="MainContent-category-categoryMenu">
+            <h2 className="MainContent-category-categoryTitle">Categorias</h2>
+            {this.showCategories()}
+          </div>
+          <div className="minigallery"></div>
         </div>
-        <div className="MainContent-category-resultBox">
-          {utils.getItems(7).map( (el, i) => {
-            return (<Items product={el} key={i}/>)
-          })}
+
+        <div className="MainContent-category-resultContent">
+          
+          <div>
+            <h3 className = "MainContent-category-resultTitle">Ofertas</h3>
+          </div>
+
+          <div className="MainContent-category-resultBox">
+            {utils.getItems(7).map( (el, i) => {
+              return (<Items product={el} key={i}/>)
+            })}
+          </div>
+
         </div>
+
       </section>
     )
   }

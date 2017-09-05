@@ -26139,20 +26139,37 @@ class Category extends _react2.default.Component {
         'div',
         { className: 'MainContent-category-categoryMenu' },
         _react2.default.createElement(
-          'h2',
-          { className: 'MainContent-category-categoryTitle' },
-          'Categorias'
+          'div',
+          { className: 'MainContent-category-categoryMenu' },
+          _react2.default.createElement(
+            'h2',
+            { className: 'MainContent-category-categoryTitle' },
+            'Categorias'
+          ),
+          this.showCategories()
         ),
-        this.showCategories()
+        _react2.default.createElement('div', { className: 'minigallery' })
       ),
       _react2.default.createElement(
         'div',
-        { className: 'MainContent-category-resultBox' },
-        _utils.utils.getItems(7).map((el, i) => {
-          return _react2.default.createElement(_items.Items, { product: el, key: i });
-        })
-      ),
-      'mini galeria xD'
+        { className: 'MainContent-category-resultContent' },
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'h3',
+            { className: 'MainContent-category-resultTitle' },
+            'Ofertas'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'MainContent-category-resultBox' },
+          _utils.utils.getItems(7).map((el, i) => {
+            return _react2.default.createElement(_items.Items, { product: el, key: i });
+          })
+        )
+      )
     );
   }
 
