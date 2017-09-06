@@ -22,7 +22,7 @@ export class Categories extends React.Component {
   render () {
     return (
       <div>
-        <h1 onClick={this.showSubcategories}>{this.data.name}</h1>
+        <h1 onClick={this.showSubcategories} className="Categories">{this.data.name}</h1>
         <ul className = {this.state.addClass ? 'test' : ''}>
           {this.data.subcategories.map( (el,i) => {
             return (

@@ -14,7 +14,7 @@ export class Navbar extends React.Component {
 
           <div className="navbar-content-title">
             <img src={ferrerLogo} alt="Ferrer PC" className="navbar-content-title-logo"/>
-            <h1>FERRER PC</h1>
+            <h1>Ferrer PC</h1>
           </div>
 
           <div className="navbar-content-navigation">

@@ -23543,7 +23543,7 @@ class Navbar extends _react2.default.Component {
           _react2.default.createElement(
             'h1',
             null,
-            'FERRER PC'
+            'Ferrer PC'
           )
         ),
         _react2.default.createElement(
@@ -26144,7 +26144,7 @@ class Category extends _react2.default.Component {
           _react2.default.createElement(
             'h2',
             { className: 'MainContent-category-categoryTitle' },
-            'Categorias'
+            'CATEGORIAS'
           ),
           this.showCategories()
         ),
@@ -26219,7 +26219,7 @@ class Categories extends _react2.default.Component {
       null,
       _react2.default.createElement(
         'h1',
-        { onClick: this.showSubcategories },
+        { onClick: this.showSubcategories, className: 'Categories' },
         this.data.name
       ),
       _react2.default.createElement(
@@ -26283,11 +26283,11 @@ class Subcategories extends _react2.default.Component {
   render() {
     return _react2.default.createElement(
       'li',
-      { onClick: this.switchItems },
+      { className: 'Categories-subcategories-item', onClick: this.switchItems },
       _react2.default.createElement(
         'h1',
         null,
-        'soy un objeto ekis de'
+        'Marca X'
       )
     );
   }

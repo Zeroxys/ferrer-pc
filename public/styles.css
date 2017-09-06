@@ -3042,7 +3042,7 @@
 .navbar-content-title h1 {
   color: #fff;
   font-size: 22px;
-  font-family: 'Helvetica';
+  font-family: 'SFMedium';
   margin-left: 18px;
 }
 .navbar-content-navigation {
@@ -3080,8 +3080,7 @@
   margin-left: -30px;
 }
 .navbar-content-navigation-menu-item {
-  padding: 0;
-  margin: 0;
+  padding-bottom: 3px;
   text-decoration: none;
 }
 .navbar-content-navigation-menu-item a {
@@ -3089,11 +3088,15 @@
   text-decoration: none;
   text-align: center;
   display: block;
-  font-family: 'Helvetica';
+  font-family: 'SFMedium';
   font-weight: 400;
   letter-spacing: 0.5px;
 }
+.navbar-content-navigation-menu-item:hover {
+  border-bottom: 1px solid #fff;
+}
 .navbar-content-navigation-form {
+  margin-top: 10px;
   width: auto;
   position: relative;
 }
@@ -3143,27 +3146,33 @@
   text-align: center;
 }
 .Categories {
-  border: 1px solid #f00;
   margin-left: 20px;
   padding: 0;
+  font-family: 'SFUlight';
+  font-size: bold;
 }
 .Categories-name {
   font-size: 15px;
-  color: #171717;
+  color: #000;
   position: relative;
   overflow: hidden;
 }
 .Categories-subcategories {
   position: absolute;
   padding: 0;
-  border: 1px solid #ff0;
 }
 .Categories-subcategories-item {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 15px;
-  color: #000;
+  font-size: 13px;
+  font-family: 'SFlight';
+  font-weight: bold;
+  color: #808080;
+  cursor: pointer;
+}
+.Categories-subcategories-item:hover {
+  color: #f8cb00;
 }
 .minigallery {
   height: 215px;
@@ -3322,7 +3331,7 @@
 .MainContent-category-categoryTitle {
   font-size: 11px;
   color: #a3a3a3;
-  font-size: 11px;
+  font-size: 13px;
   margin-left: 20px;
 }
 .MainContent-category-resultContent {
@@ -3341,7 +3350,7 @@
           flex-direction: column;
 }
 .MainContent-category-resultTitle {
-  font-family: 'SFNSDisplay';
+  font-family: 'SFUlight';
   margin-left: 21px;
   font-size: 27px;
   margin: 0 0 5px 20px;
@@ -3671,9 +3680,22 @@
 @font-face {
   font-family: SFNSDisplayRegular;
   src: url(assets/fonts/SFText-Regular.otf);
+}
+@font-face {
   font-family: SanFranciscoTextRegular;
   src: url(assets/fonts/SanFranciscoText-Regular.otf);
-  @font-face;
+}
+@font-face {
+  font-family: SFlight;
+  src: url(assets/fonts/SanFranciscoText-Light.otf);
+}
+@font-face {
+  font-family: SFUlight;
+  src: url(assets/fonts/SanFranciscoDisplay-Ultralight.otf);
+}
+@font-face {
+  font-family: SFMedium;
+  src: url(assets/fonts/SanFranciscoText-Medium.otf);
 }
 body html {
   margin: 0;

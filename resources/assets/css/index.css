@@ -28,9 +28,21 @@ $backgroundColor = #f1f1f1;
   font-family: SFNSDisplayRegular
   src: url('../fonts/SFText-Regular.otf')
 
-  @font-face 
+@font-face 
   font-family: SanFranciscoTextRegular
-  src: url('../fonts/SanFranciscoText-Regular.otf')    
+  src: url('../fonts/SanFranciscoText-Regular.otf')
+
+@font-face 
+  font-family: SFlight
+  src: url('../fonts/SanFranciscoText-Light.otf')
+
+@font-face 
+  font-family: SFUlight
+  src: url('../fonts/SanFranciscoDisplay-Ultralight.otf')  
+
+@font-face 
+  font-family: SFMedium
+  src: url('../fonts/SanFranciscoText-Medium.otf')    
 
 
 body html 

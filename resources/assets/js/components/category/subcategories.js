@@ -25,8 +25,8 @@ export class Subcategories extends React.Component {
 
   render () {
     return (
-      <li onClick={this.switchItems}>
-        <h1>soy un objeto ekis de</h1>
+      <li className="Categories-subcategories-item" onClick={this.switchItems}>
+        <h1>Marca X</h1>
       </li>
     )
   }

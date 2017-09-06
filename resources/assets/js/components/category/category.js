@@ -47,7 +47,7 @@ export class Category extends React.Component {
         
         <div className="MainContent-category-categoryMenu">
           <div className="MainContent-category-categoryMenu">
-            <h2 className="MainContent-category-categoryTitle">Categorias</h2>
+            <h2 className="MainContent-category-categoryTitle">CATEGORIAS</h2>
             {this.showCategories()}
           </div>
           <div className="minigallery"></div>
